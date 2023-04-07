@@ -10,6 +10,7 @@ const ejs = require("ejs");
 
 const app = express();
 
+const PORT = process.env.PORT || 3000;
 app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -139,6 +140,6 @@ app.post("/register", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("serve is running at 3000");
 });
